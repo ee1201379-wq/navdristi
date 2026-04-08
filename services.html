@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="services">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-three"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell">
+    <section class="page-head">
+      <div>
+        <p class="eyebrow">Chhattisgarh Public Services</p>
+        <h1>One portal for services, support, complaints, and safety.</h1>
+        <p class="hero-text">Browse citizen facilities in a national-portal style layout built for Chhattisgarh: utilities, certificates, women support, elder care, emergency access, and grievance resolution.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-primary" href="./auth.html">Login To Portal</a>
+        <a class="button button-secondary" href="./citizen-dashboard.html">Open Complaint Portal</a>
+      </div>
+    </section>
+
+    <section class="glass-card portal-banner">
+      <div class="section-title compact">
+        <p class="eyebrow">Government Announcements</p>
+        <h2>Official alerts, district advisories, and scheme notices</h2>
+      </div>
+      <div class="notice-ticker">
+        <strong>Official Alerts</strong>
+        <span>Water maintenance advisory for Raipur urban zones on Sunday 10:00 AM to 2:00 PM.</span>
+        <span>Heavy rainfall monitoring active in Bastar and Sukma districts.</span>
+        <span>Women and child emergency desks remain on priority escalation mode.</span>
+        <span>Pension and Ayushman support camp open in Bilaspur division this week.</span>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Most Used Services</p>
+          <h2>Fast entry for the highest-demand facilities.</h2>
+        </div>
+        <div id="mostUsedServicesWidget" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Service Filters</p>
+          <h2>Find the right facility fast</h2>
+        </div>
+        <div class="toolbar toolbar-wide">
+          <input id="serviceSearch" type="text" placeholder="Search water, women, certificate, emergency, pension">
+          <select id="serviceCategoryFilter">
+            <option value="all">All categories</option>
+            <option value="utilities">Utilities</option>
+            <option value="documents">Documents</option>
+            <option value="safety">Safety</option>
+            <option value="support">Support</option>
+            <option value="emergency">Emergency</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Portal Highlights</p>
+          <h2>Built for service access and issue resolution</h2>
+        </div>
+        <div class="service-directory-grid">
+          <div class="glass-subcard">
+            <strong>Service discovery</strong>
+            <p>Find key citizen facilities without leaving the portal.</p>
+          </div>
+          <div class="glass-subcard">
+            <strong>Complaint to closure</strong>
+            <p>Raise complaints and track officer-led action.</p>
+          </div>
+          <div class="glass-subcard">
+            <strong>Women and elder safety</strong>
+            <p>Dedicated support sections with fast helpline access.</p>
+          </div>
+          <div class="glass-subcard">
+            <strong>Judge demo mode</strong>
+            <p>Run a guided presentation route for the strongest end-to-end flow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="service-portal-grid" id="servicePortalGrid"></div>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">State Dashboard Summary</p>
+          <h2>Citizen-facing state signals.</h2>
+        </div>
+        <div id="stateDashboardSummary" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Citizen Trust Layer</p>
+          <h2>Transparency, community trust, and department scores.</h2>
+        </div>
+        <div class="service-directory-grid">
+          <div class="glass-subcard" id="resolvedCasesArchive"></div>
+          <div class="glass-subcard" id="transparencyWall"></div>
+          <div class="glass-subcard" id="communityTrustCard"></div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Department Response Score</p>
+          <h2>Public-facing performance signal.</h2>
+        </div>
+        <div id="departmentResponseScores" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Printable Service Desk</p>
+          <h2>Portal-ready PDFs and receipts</h2>
+        </div>
+        <div class="service-directory-grid" id="printableServiceDesk"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Eligibility Checklist</p>
+          <h2>What to keep ready before applying.</h2>
+        </div>
+        <div id="serviceEligibilityChecklist" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">District Service Directory</p>
+          <h2>Facilities grouped by district.</h2>
+        </div>
+        <div class="service-directory-grid" id="districtServiceDirectory"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Step-By-Step Guidance</p>
+          <h2>How a citizen uses the portal.</h2>
+        </div>
+        <div id="stepGuidanceBoard" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">FAQ and Help Center</p>
+          <h2>Quick answers for common questions.</h2>
+        </div>
+        <div id="faqBoard" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">District Spotlight</p>
+          <h2>Chhattisgarh districts and active service demand.</h2>
+        </div>
+        <div class="service-directory-grid" id="districtSpotlightBoard"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Success Stories</p>
+          <h2>Resolved examples for presentation.</h2>
+        </div>
+        <div class="service-directory-grid" id="successStoriesBoard"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Guided Onboarding</p>
+          <h2>What to show first in the portal.</h2>
+        </div>
+        <div class="service-directory-grid" id="onboardingCards"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/services.js"></script>
+</body>
+</html>

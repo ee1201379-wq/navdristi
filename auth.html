@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="auth">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-three"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell narrow-shell">
+    <section class="portal-banner glass-card">
+      <div class="portal-banner-head">
+        <div class="portal-emblem">
+          <span>CG</span>
+        </div>
+        <div>
+          <p class="eyebrow">Government of Chhattisgarh Inspired Public Service Portal</p>
+          <h1>Nav Dristi Chhattisgarh Public Services, Safety and Grievance Portal</h1>
+          <p class="hero-text">One digital window for services, district-level grievance redressal, women safety, elder emergency support, public notices, and transparent officer-led resolution.</p>
+        </div>
+      </div>
+      <div class="notice-ticker">
+        <strong>Citizen Notices</strong>
+        <span>Monsoon road-repair drive active in Raipur and Durg.</span>
+        <span>Women fast-track desk escalates unresolved complaints in 1 hour.</span>
+        <span>Senior emergency response is linked with ambulance support and welfare checks.</span>
+      </div>
+      <div class="toolbar toolbar-wide">
+        <input type="text" value="Search services: pension, water bill, women safety, land records, tax, certificates" readonly>
+        <a class="button button-primary" href="./services.html">Open Service Search</a>
+      </div>
+      <div class="service-directory-grid">
+        <div class="glass-subcard">
+          <strong>Most Used Services</strong>
+          <p>Water bill, certificate help, pension support, land records, municipal tax, safety reporting.</p>
+        </div>
+        <div class="glass-subcard">
+          <strong>District Quick Links</strong>
+          <p>Raipur, Bilaspur, Durg, Bastar, Korba, Mahasamund, Surguja, Raigarh.</p>
+        </div>
+        <div class="glass-subcard">
+          <strong>Emergency Access</strong>
+          <p>108 ambulance, 181 women helpline, 1098 child helpline, 112 emergency.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-layout">
+      <div class="glass-card auth-promo">
+        <p class="eyebrow">Portal Access</p>
+        <h1>Choose the right portal before you log in.</h1>
+        <p class="hero-text">
+          Nav Dristi has separate user and admin views. Citizens report and track complaints, admins manage action queues, and support users get dedicated fast-track routes.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-ghost" href="./services.html">Browse Chhattisgarh Services</a>
+          <a class="button button-secondary" href="./judge-mode.html">Open Judge Mode</a>
+        </div>
+        <div class="department-tile-grid">
+          <article class="department-tile">
+            <strong>Public Health Engineering</strong>
+            <p>Water, sanitation, drainage, utility support</p>
+          </article>
+          <article class="department-tile">
+            <strong>Urban Administration</strong>
+            <p>Municipal tax, roads, street maintenance, cleanliness</p>
+          </article>
+          <article class="department-tile">
+            <strong>Women and Child Support</strong>
+            <p>Harassment, abuse, child safety, emergency escalation</p>
+          </article>
+          <article class="department-tile">
+            <strong>Social Welfare and Senior Care</strong>
+            <p>Pension, elder emergency, welfare checks, public assistance</p>
+          </article>
+        </div>
+        <div class="auth-facility-grid">
+          <article class="facility-card facility-citizen">
+            <span class="facility-tag">User View</span>
+            <h3>Citizen portal</h3>
+            <p>Submit complaints with text, voice, images, district, road, and live AI analysis.</p>
+            <ul class="facility-list">
+              <li>Complaint submission and tracking</li>
+              <li>Community support and feedback</li>
+              <li>Safety map and service directory</li>
+            </ul>
+            <button class="button button-primary wide-button" type="button" id="enterCitizenPortal">Enter User Portal</button>
+          </article>
+
+          <article class="facility-card facility-admin">
+            <span class="facility-tag">Admin View</span>
+            <h3>Authority command center</h3>
+            <p>Review complaints, change status, route departments, and monitor escalation risks.</p>
+            <ul class="facility-list">
+              <li>Action queue and assignment tools</li>
+              <li>AI triage and escalation visibility</li>
+              <li>District analytics and officers</li>
+            </ul>
+            <button class="button button-secondary wide-button" type="button" id="enterAdminPortal">Enter Admin Portal</button>
+          </article>
+        </div>
+
+        <div class="glass-subcard women-auth-card">
+          <p class="eyebrow">Women Support Section</p>
+          <h2>Fast-track safety and harassment reporting.</h2>
+          <p>Women complaints can be filed from the citizen side under the Women Support Desk and are marked for 1-hour escalation with superior notification.</p>
+          <div class="support-contact-grid">
+            <div>
+              <strong>Chhattisgarh State Commission for Women</strong>
+              <p>Toll-free: 1800-233-4299</p>
+              <p>Other: 0771-2429977</p>
+              <p>Email: complaint@cgmahilaayog.com</p>
+            </div>
+            <div>
+              <strong>Supported complaint types</strong>
+              <p>Domestic violence</p>
+              <p>Dowry harassment</p>
+              <p>Sexual harassment or assault</p>
+              <p>Mental or physical abuse</p>
+            </div>
+          </div>
+          <button class="button button-primary" type="button" id="openWomenSection">Open Women Section</button>
+        </div>
+
+        <div class="glass-subcard men-auth-card">
+          <p class="eyebrow">Male Support Section</p>
+          <h2>Separate reporting for assault, threats, and harassment.</h2>
+          <p>Male users get a separate support route for abuse, intimidation, blackmail, and violence complaints without mixing them with normal civic issues.</p>
+          <div class="support-contact-grid">
+            <div>
+              <strong>Citizen Safety Support Desk</strong>
+              <p>Toll-free: 1800-233-1919</p>
+              <p>Other: 0771-2331199</p>
+              <p>Email: citizensafety@navdristi.demo</p>
+            </div>
+            <div>
+              <strong>Supported complaint types</strong>
+              <p>Physical assault</p>
+              <p>Blackmail or extortion</p>
+              <p>Threats or intimidation</p>
+              <p>Mental abuse</p>
+            </div>
+          </div>
+          <button class="button button-secondary" type="button" id="openMenSection">Open Male Section</button>
+        </div>
+
+        <div class="glass-subcard elder-auth-card">
+          <p class="eyebrow">Elder Emergency Section</p>
+          <h2>Emergency reporting for senior citizens living alone.</h2>
+          <p>This section is for elderly users above 70 who need fast support for falls, medical distress, threats, or living-alone emergencies.</p>
+          <div class="support-contact-grid">
+            <div>
+              <strong>Senior Emergency Help Desk</strong>
+              <p>Toll-free: 1800-233-7070</p>
+              <p>Other: 0771-2707070</p>
+              <p>Email: eldercare@navdristi.demo</p>
+            </div>
+            <div>
+              <strong>Supported complaint types</strong>
+              <p>Fall or injury emergency</p>
+              <p>Medical distress while alone</p>
+              <p>Threat or abuse against senior citizen</p>
+              <p>No-response welfare check</p>
+            </div>
+          </div>
+          <button class="button button-primary" type="button" id="openElderSection">Open Elder Section</button>
+        </div>
+
+        <div class="demo-credentials">
+          <div class="credential-card">
+            <span>General User</span>
+            <strong>general@navdristi.in</strong>
+            <span>NavDristi@123</span>
+          </div>
+          <div class="credential-card">
+            <span>Women User</span>
+            <strong>women@navdristi.in</strong>
+            <span>NavDristi@123</span>
+          </div>
+          <div class="credential-card">
+            <span>Male User</span>
+            <strong>male@navdristi.in</strong>
+            <span>NavDristi@123</span>
+          </div>
+          <div class="credential-card">
+            <span>Admin</span>
+            <strong>admin@navdristi.in</strong>
+            <span>NavDristi@123</span>
+          </div>
+          <div class="credential-card">
+            <span>Elder User</span>
+            <strong>elder@navdristi.in</strong>
+            <span>NavDristi@123</span>
+          </div>
+        </div>
+        <div class="hero-actions stacked">
+          <button class="button button-primary" id="demoCitizenLogin">Use General User Demo</button>
+          <button class="button button-primary" id="demoWomenLogin">Use Women User Demo</button>
+          <button class="button button-secondary" id="demoMenLogin">Use Male User Demo</button>
+          <button class="button button-secondary" id="demoElderLogin">Use Elder User Demo</button>
+          <button class="button button-secondary" id="demoAdminLogin">Use Admin Demo</button>
+          <button class="button button-ghost" id="resetDemoDataButton" type="button">Reset Demo Accounts</button>
+        </div>
+        <div class="glass-subcard uniqueness-strip">
+          <strong>What makes Nav Dristi different?</strong>
+          <p>It combines public services, guided complaints, officer-led resolution, women and elder emergency support, and visible escalation tracking in one Chhattisgarh-first portal.</p>
+        </div>
+      </div>
+
+      <div class="glass-card auth-panel">
+        <div class="segmented-control">
+          <button class="segment is-active" data-auth-view="login">Login</button>
+          <button class="segment" data-auth-view="register">Sign Up</button>
+        </div>
+
+        <div class="auth-role-banner" id="authRoleBanner">
+          <strong>User Login</strong>
+          <p>Use citizen access to file complaints, choose support desks, and track updates.</p>
+        </div>
+
+        <form class="auth-form" id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" name="email" type="email" placeholder="general@navdristi.in" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" name="password" type="password" placeholder="NavDristi@123" required>
+          </div>
+          <div class="form-group">
+            <label for="loginRole">Role</label>
+            <select id="loginRole" name="role">
+              <option value="general">General user</option>
+              <option value="women">Women user</option>
+              <option value="men">Male user</option>
+              <option value="elder">Elder user</option>
+              <option value="admin">Authority / Admin</option>
+            </select>
+          </div>
+          <div class="glass-subcard" id="loginDemoCredentialCard">
+            <strong>Selected demo user</strong>
+            <p>General user / general@navdristi.in / NavDristi@123</p>
+          </div>
+          <button class="button button-primary wide-button" type="submit">Login to Dashboard</button>
+        </form>
+
+        <form class="auth-form hidden" id="registerForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="registerName">Full name</label>
+              <input id="registerName" name="name" type="text" placeholder="Riya Sharma" required>
+            </div>
+            <div class="form-group">
+              <label for="registerCitizenType">User section</label>
+              <select id="registerCitizenType" name="citizenType" required>
+                <option value="general">General user</option>
+                <option value="women">Women support user</option>
+                <option value="men">Male support user</option>
+                <option value="elder">Elder emergency user</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="registerDistrict">District</label>
+              <select id="registerDistrict" name="district" required></select>
+            </div>
+            <div class="form-group">
+              <label for="registerWard">Ward</label>
+              <select id="registerWard" name="ward" required></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="registerEmail">Email</label>
+              <input id="registerEmail" name="email" type="email" placeholder="riya@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="registerPassword">Password</label>
+              <input id="registerPassword" name="password" type="password" placeholder="At least 6 characters" minlength="6" required>
+            </div>
+          </div>
+          <button class="button button-primary wide-button" type="submit">Create Citizen Account</button>
+        </form>
+
+        <div class="glass-subcard">
+          <strong>Quick Role Guide</strong>
+          <div class="stack-list compact-list">
+            <article class="stack-item compact-item">
+              <h3>General user</h3>
+              <p>Use for civic complaints, service tracking, and regular citizen flows.</p>
+            </article>
+            <article class="stack-item compact-item">
+              <h3>Women / Male / Elder user</h3>
+              <p>Use for safety, abuse, harassment, or emergency-first support journeys.</p>
+            </article>
+            <article class="stack-item compact-item">
+              <h3>Authority / Admin</h3>
+              <p>Use for assignment, escalation, SLA monitoring, and officer management.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="glass-subcard">
+          <strong>How To Demo</strong>
+          <div class="stack-list compact-list">
+            <article class="stack-item compact-item">
+              <h3>1. Select role</h3>
+              <p>Pick the correct role from the dropdown and the form auto-fills the demo credentials.</p>
+            </article>
+            <article class="stack-item compact-item">
+              <h3>2. Login</h3>
+              <p>Enter the portal and show the role-based dashboard or support section.</p>
+            </article>
+            <article class="stack-item compact-item">
+              <h3>3. Explain flow</h3>
+              <p>Citizen submit -> AI route -> officer tracking -> escalation -> proof -> feedback.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/auth.js"></script>
+</body>
+</html>

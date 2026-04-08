@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Resolution Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="complaint-detail">
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell">
+    <section class="page-head">
+      <div>
+        <p class="eyebrow">Complaint Detail</p>
+        <h1 id="complaintTitle">Tracking complaint...</h1>
+        <p class="hero-text" id="complaintSummary">Loading complaint summary, AI verification, and conversation timeline.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-secondary" id="complaintBackLink" href="./citizen-dashboard.html">Back to Dashboard</a>
+        <a class="button button-ghost" id="officerWorkflowLink" href="./officer-workflow.html">Officer Workflow</a>
+        <a class="button button-ghost" href="./ai-features.html">AI Demo Flow</a>
+      </div>
+    </section>
+
+    <section class="dashboard-grid detail-grid">
+      <div class="glass-card span-two">
+        <div class="meta-strip" id="complaintMetaStrip"></div>
+        <div class="detail-grid-inner">
+          <div>
+            <div class="section-title compact">
+              <p class="eyebrow">Timeline</p>
+              <h2>Resolution activity</h2>
+            </div>
+            <div class="timeline-list" id="complaintTimeline"></div>
+          </div>
+          <div>
+            <div class="section-title compact">
+              <p class="eyebrow">AI Insight</p>
+              <h2>Why this case was prioritized</h2>
+            </div>
+            <div class="glass-subcard" id="complaintAiCard"></div>
+            <div class="glass-subcard" id="complaintAiDeepDive"></div>
+            <div class="glass-subcard" id="complaintVisibilityCard"></div>
+            <div class="glass-subcard" id="resolutionCenterCard"></div>
+            <div class="glass-subcard" id="officerTrackingCard"></div>
+            <div class="glass-subcard" id="documentPackageCard"></div>
+            <div class="glass-subcard hidden" id="complaintAudioCard">
+              <strong>Citizen voice recording</strong>
+              <audio id="complaintAudio" controls></audio>
+            </div>
+            <div class="glass-subcard hidden" id="complaintImageCard">
+              <img id="complaintImage" alt="Complaint evidence">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Citizen to Authority Chat</p>
+          <h2>Real-time style updates</h2>
+        </div>
+        <div class="chat-window" id="chatWindow"></div>
+        <form class="chat-form" id="chatForm">
+          <textarea id="chatMessage" rows="3" placeholder="Send an update or ask for clarification." required></textarea>
+          <button class="button button-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="glass-card" id="adminActionCard">
+        <div class="section-title compact">
+          <p class="eyebrow">Admin Actions</p>
+          <h2>Update status and assignment</h2>
+        </div>
+        <form class="stack-form" id="statusForm">
+          <div class="form-group">
+            <label for="statusSelect">Status</label>
+            <select id="statusSelect"></select>
+          </div>
+          <div class="form-group">
+            <label for="statusNote">Status note</label>
+            <textarea id="statusNote" rows="3" placeholder="Add a short public-facing update"></textarea>
+          </div>
+          <button class="button button-secondary wide-button" type="submit">Update Status</button>
+        </form>
+
+        <form class="stack-form" id="assignmentForm">
+          <div class="form-group">
+            <label for="departmentSelect">Department</label>
+            <select id="departmentSelect"></select>
+          </div>
+          <div class="form-group">
+            <label for="officerInput">Assigned officer</label>
+            <input id="officerInput" type="text" placeholder="Officer name">
+          </div>
+          <button class="button button-primary wide-button" type="submit">Save Assignment</button>
+        </form>
+        <form class="stack-form" id="proofForm">
+          <div class="form-group">
+            <label for="proofImage">Proof image</label>
+            <input id="proofImage" type="file" accept="image/*">
+          </div>
+          <div class="form-group">
+            <label for="proofNote">Closure proof / field visit proof</label>
+            <textarea id="proofNote" rows="3" placeholder="Add proof note: field photo verified, pipeline fixed, citizen called, inspection done."></textarea>
+          </div>
+          <button class="button button-secondary wide-button" type="submit">Log Proof And Notify Citizen</button>
+        </form>
+      </div>
+
+      <div class="glass-card hidden" id="citizenFeedbackCard">
+        <div class="section-title compact">
+          <p class="eyebrow">Citizen Feedback</p>
+          <h2>Confirm whether the issue was actually solved.</h2>
+        </div>
+        <form class="stack-form" id="feedbackForm">
+          <div class="form-group">
+            <label for="feedbackRating">Resolution rating</label>
+            <select id="feedbackRating">
+              <option value="5">5 - Fully resolved</option>
+              <option value="4">4 - Mostly resolved</option>
+              <option value="3">3 - Acceptable</option>
+              <option value="2">2 - Needs more work</option>
+              <option value="1">1 - Not resolved</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="feedbackNote">Feedback note</label>
+            <textarea id="feedbackNote" rows="3" placeholder="Tell the team what improved or what is still pending."></textarea>
+          </div>
+          <button class="button button-primary wide-button" type="submit">Submit Feedback</button>
+        </form>
+        <div class="glass-subcard hidden" id="feedbackSummaryCard"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/complaint.js"></script>
+</body>
+</html>
+

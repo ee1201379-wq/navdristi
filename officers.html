@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Officer Directory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="officers">
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell">
+    <section class="page-head">
+      <div>
+        <p class="eyebrow">Department Officers</p>
+        <h1>Officer directory for each department in the Chhattisgarh demo.</h1>
+        <p class="hero-text">Use this page to show which officers handle water, roads, electricity, sanitation, and public safety complaints across districts.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-secondary" href="./admin-dashboard.html">Open Admin Dashboard</a>
+        <a class="button button-ghost" href="./safety-map.html">Open Safety Map</a>
+      </div>
+    </section>
+
+    <section class="toolbar toolbar-wide officer-toolbar">
+      <select id="officerDepartmentFilter"></select>
+      <input id="officerSearch" type="search" placeholder="Search officer, district, role, or department">
+    </section>
+
+    <section class="dashboard-grid analytics-grid" id="officerDirectoryGrid"></section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/officers.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Service Receipt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="service-receipt">
+  <header data-app-header></header>
+  <main class="page-shell narrow-shell">
+    <section class="glass-card">
+      <p class="eyebrow">Nav Dristi Service Receipt</p>
+      <h1 id="receiptTitle">Loading service receipt...</h1>
+      <div class="meta-strip" id="serviceReceiptMeta"></div>
+      <div class="glass-subcard" id="serviceReceiptBody"></div>
+      <div class="hero-actions">
+        <button class="button button-primary" type="button" onclick="window.print()">Print Receipt</button>
+        <a class="button button-secondary" href="./services.html">Back To Services</a>
+      </div>
+    </section>
+  </main>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/service-receipt.js"></script>
+</body>
+</html>

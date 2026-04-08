@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Citizen Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="citizen-dashboard">
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell">
+    <section class="page-head">
+      <div>
+        <p class="eyebrow">Citizen Portal</p>
+        <h1 id="citizenWelcome">Report a civic issue and track action step by step.</h1>
+        <p class="hero-text">Use one clear flow to submit a complaint with text, voice, image, and location details, then watch it move from submission to resolution.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#complaintForm">Raise Complaint</a>
+        <a class="button button-secondary" href="./safety-map.html">Open Safety Map</a>
+        <a class="button button-ghost" href="./officers.html">Officer Directory</a>
+      </div>
+    </section>
+
+    <section class="stat-grid" id="citizenStats"></section>
+
+    <section class="dashboard-grid citizen-highlight-grid">
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Women Support Desk</p>
+          <h2>Priority support with 1-hour escalation.</h2>
+        </div>
+        <div class="glass-subcard" id="womenSupportCard"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Men Support Desk</p>
+          <h2>Dedicated reporting for abuse and threats.</h2>
+        </div>
+        <div class="glass-subcard" id="menSupportCard"></div>
+      </div>
+    </section>
+
+    <section class="dashboard-grid citizen-highlight-grid">
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Guided Complaint Wizard</p>
+          <h2>Submit through a guided 5-step intake.</h2>
+        </div>
+        <div class="wizard-steps" id="complaintWizardSteps"></div>
+        <div class="journey-steps" id="citizenJourneySteps"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Why AI Marked It</p>
+          <h2>Live proof from your current draft.</h2>
+        </div>
+        <div class="ai-proof-board" id="citizenAiProofBoard"></div>
+      </div>
+    </section>
+
+    <section class="dashboard-grid citizen-grid">
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">New Complaint</p>
+          <h2>Visible complaint submission form.</h2>
+        </div>
+        <div class="glass-subcard">
+          <strong>Everything judges will look for is here</strong>
+          <p>Choose issue type, choose who needs help, add location and evidence, review AI routing, and generate a receipt-style complaint token.</p>
+        </div>
+        <div class="glass-subcard hidden" id="offlineDraftCard"></div>
+        <div class="glass-subcard">
+          <div class="section-title compact">
+            <p class="eyebrow">Complaint Templates</p>
+            <h2>Start faster with common issue presets.</h2>
+          </div>
+          <div class="service-directory-grid" id="complaintTemplateGrid"></div>
+        </div>
+        <div class="glass-subcard">
+          <div class="section-title compact">
+            <p class="eyebrow">Voice Complaint</p>
+            <h2>Speak in your preferred language.</h2>
+          </div>
+          <div class="toolbar toolbar-wide">
+            <select id="voiceLanguageSelect"></select>
+            <button class="button button-secondary" type="button" id="voiceStartButton">Start Voice Input</button>
+            <button class="button button-ghost" type="button" id="voiceUseTranscriptButton">Use Transcript</button>
+          </div>
+          <p class="timeline-meta" id="voiceStatus">Voice input is ready when your browser supports speech recognition.</p>
+          <div class="ai-preview" id="voiceTranscriptCard">
+            <p>Record a complaint and the transcript will appear here.</p>
+          </div>
+        </div>
+        <div class="glass-subcard">
+          <div class="section-title compact">
+            <p class="eyebrow">Audio Recording</p>
+            <h2>Attach the original voice recording.</h2>
+          </div>
+          <div class="toolbar toolbar-wide">
+            <button class="button button-primary" type="button" id="audioRecordButton">Start Recording</button>
+            <button class="button button-secondary" type="button" id="audioStopButton">Stop Recording</button>
+            <button class="button button-secondary" type="button" id="audioTranscribeButton">AI Transcribe Recording</button>
+            <button class="button button-ghost" type="button" id="audioClearButton">Clear Recording</button>
+          </div>
+          <p class="timeline-meta" id="audioStatus">Audio recording is idle.</p>
+          <div class="glass-subcard hidden" id="audioPreviewCard">
+            <strong>Recorded audio evidence</strong>
+            <audio id="audioPreview" controls></audio>
+          </div>
+        </div>
+        <form id="complaintForm" class="stack-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="complaintTitle">Title</label>
+              <input id="complaintTitle" name="title" type="text" placeholder="Water leakage near Rose Lane" required>
+            </div>
+            <div class="form-group">
+              <label for="complaintDesk">Support section</label>
+              <select id="complaintDesk" name="issueDesk"></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="complaintCategory">Issue type</label>
+              <select id="complaintCategory" name="reportedCategory"></select>
+            </div>
+            <div class="form-group">
+              <label for="complaintMode">Complaint mode</label>
+              <select id="complaintMode" name="complaintMode">
+                <option value="all">Show all methods</option>
+                <option value="text">Text complaint</option>
+                <option value="voice">Voice complaint</option>
+                <option value="image">Image complaint</option>
+                <option value="audio">Audio recording</option>
+                <option value="emergency">Emergency priority</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="complaintPriorityHint">Fast-track note</label>
+              <input id="complaintPriorityHint" type="text" value="Women safety complaints auto-escalate after 1 hour." readonly>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="complaintDistrict">District</label>
+              <select id="complaintDistrict" name="district" required></select>
+            </div>
+            <div class="form-group">
+              <label for="complaintWard">Ward</label>
+              <select id="complaintWard" name="ward" required></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="complaintRoad">Road / street</label>
+              <input id="complaintRoad" name="roadName" type="text" placeholder="VIP Road">
+            </div>
+            <div class="form-group">
+              <label for="complaintLandmark">Landmark</label>
+              <input id="complaintLandmark" name="landmark" type="text" placeholder="Near school gate or bus stand">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="complaintLocation">Location</label>
+            <input id="complaintLocation" name="location" type="text" placeholder="Rose Lane, Ward 5" required>
+          </div>
+          <div class="form-group">
+            <label for="complaintDescription">Complaint details</label>
+            <textarea id="complaintDescription" name="description" rows="5" placeholder="Describe the issue, how severe it is, and if there is any public risk." required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="complaintImage">Upload image</label>
+              <input id="complaintImage" name="image" type="file" accept="image/*">
+            </div>
+            <div class="form-group">
+              <label>AI Preview</label>
+              <div class="ai-preview" id="aiPreviewCard">
+                <p>Add details and Nav Dristi AI will suggest a category, priority, and department.</p>
+              </div>
+            </div>
+          </div>
+          <div class="image-preview hidden" id="imagePreviewWrap">
+            <img id="imagePreview" alt="Complaint preview">
+          </div>
+          <div class="glass-subcard" id="imageVerificationCard">
+            <strong>Image verification</strong>
+            <p>Add an image to verify whether the evidence appears original, reused, or low confidence.</p>
+          </div>
+          <div class="hero-actions">
+            <button class="button button-primary" type="submit">Submit Complaint</button>
+            <button class="button button-secondary" type="button" id="saveDraftButton">Save Draft</button>
+            <button class="button button-ghost" type="button" id="clearDraftButton">Clear Draft</button>
+          </div>
+        </form>
+        <div class="glass-subcard hidden" id="complaintReceiptCard"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">My Complaints</p>
+          <h2>Filter, track, and reopen details anytime.</h2>
+        </div>
+        <div class="toolbar toolbar-wide">
+          <input id="citizenSearchFilter" type="search" placeholder="Search title, district, road, or officer">
+          <select id="citizenStatusFilter"></select>
+          <select id="citizenDistrictFilter"></select>
+          <select id="citizenCategoryFilter"></select>
+          <select id="citizenPriorityFilter"></select>
+          <select id="citizenDateFilter">
+            <option value="all">All time</option>
+            <option value="7">Last 7 days</option>
+            <option value="30">Last 30 days</option>
+            <option value="90">Last 90 days</option>
+          </select>
+        </div>
+        <div class="complaint-list" id="citizenComplaintList"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Complaint History</p>
+          <h2>Your past cases, ratings, and closures.</h2>
+        </div>
+        <div class="stack-list" id="complaintHistoryBoard"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Public Services</p>
+          <h2>Frequently searched facilities.</h2>
+        </div>
+        <div class="service-directory-grid">
+          <div class="glass-subcard">
+            <strong>Water bill / connection</strong>
+            <div class="stack-list compact-list" id="documentServiceList"></div>
+          </div>
+          <div class="glass-subcard">
+            <strong>Most searched departments</strong>
+            <div class="stack-list compact-list" id="topDepartmentList"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">AI Voice Assistant</p>
+          <h2>Talk to Nav Dristi like a public support desk.</h2>
+        </div>
+        <div class="glass-subcard assistant-card">
+          <strong id="assistantTitle">Nav Dristi Voice is ready.</strong>
+          <p id="assistantResponse">Ask about complaint priority, department routing, your latest complaint, or what to do next, and the assistant will answer out loud.</p>
+          <div class="toolbar toolbar-wide">
+            <button class="button button-primary" type="button" id="assistantListenButton">Talk to AI</button>
+            <button class="button button-secondary" type="button" id="assistantSpeakButton">Speak Last Reply</button>
+            <button class="button button-ghost" type="button" id="assistantStopButton">Stop Voice</button>
+          </div>
+          <p class="timeline-meta" id="assistantStatus">Voice assistant is idle.</p>
+          <div class="ai-preview" id="assistantTranscriptCard">
+            <p>When you speak, your question and the AI reply will appear here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/ai-api.js"></script>
+  <script src="./public/js/citizen-dashboard.js"></script>
+</body>
+</html>

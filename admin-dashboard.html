@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Admin Command Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="admin-dashboard">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-three"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell">
+    <section class="page-head">
+      <div>
+        <p class="eyebrow">Authority Command Center</p>
+        <h1>Manage complaints with clear actions, priorities, and accountability.</h1>
+        <p class="hero-text">Use filters, assignment tools, escalation buttons, and lifecycle tracking to show exactly what happens after submission.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-primary" href="./officer-workflow.html">Open Officer Workflow</a>
+        <a class="button button-secondary" href="./analytics.html">Open Full Analytics</a>
+        <a class="button button-ghost" href="./ai-features.html">Review AI Stack</a>
+      </div>
+    </section>
+
+    <section class="stat-grid" id="adminStats"></section>
+
+    <section class="dashboard-grid admin-grid">
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Complaint Operations</p>
+          <h2>Search, filter, assign, and act.</h2>
+        </div>
+        <div class="toolbar toolbar-wide">
+          <input id="adminSearch" type="search" placeholder="Search complaints, location, or ward">
+          <select id="adminStatusFilter"></select>
+          <select id="adminCategoryFilter"></select>
+          <select id="adminPriorityFilter"></select>
+        </div>
+        <div class="toolbar toolbar-wide">
+          <button class="button button-ghost" type="button" id="adminSelectAllButton">Select Visible</button>
+          <select id="bulkStatusSelect">
+            <option value="">Bulk status</option>
+            <option value="open">Open</option>
+            <option value="in_progress">In Progress</option>
+            <option value="resolved">Resolved</option>
+            <option value="escalated">Escalated</option>
+          </select>
+          <select id="bulkDepartmentSelect">
+            <option value="">Bulk department</option>
+          </select>
+          <input id="bulkOfficerInput" type="text" placeholder="Bulk officer name">
+          <button class="button button-secondary" type="button" id="bulkStatusApply">Apply Status</button>
+          <button class="button button-primary" type="button" id="bulkAssignApply">Apply Assignment</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>ID</th>
+                <th>Complaint</th>
+                <th>AI Signals</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="adminComplaintTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Department Inbox</p>
+          <h2>Cases grouped by operational unit.</h2>
+        </div>
+        <div id="departmentInbox" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Urgent Queue</p>
+          <h2>Cases that need quick attention.</h2>
+        </div>
+        <div id="urgentQueue" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Pending Critical</p>
+          <h2>High-severity cases still open.</h2>
+        </div>
+        <div id="pendingCriticalBoard" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">AI Pattern Watch</p>
+          <h2>Duplicate clusters and risk notes.</h2>
+        </div>
+        <div id="aiPatternWatch" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Fake Review Queue</p>
+          <h2>Evidence and duplicate checks.</h2>
+        </div>
+        <div id="fakeReviewQueue" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Automation Layer</p>
+          <h2>Assignment, escalation, and suggested fixes.</h2>
+        </div>
+        <div id="automationLayer" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Officer Assignment Board</p>
+          <h2>Work routed by officer and desk.</h2>
+        </div>
+        <div id="assignmentBoard" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Category Load</p>
+          <h2>Complaint mix by service area.</h2>
+        </div>
+        <div id="adminCategoryBars" class="bars-wrap"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Department Capacity</p>
+          <h2>Backlog and SLA health.</h2>
+        </div>
+        <div id="departmentCapacity" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Department Complaint Board</p>
+          <h2>Department-wise backlog and response load.</h2>
+        </div>
+        <div id="departmentBoard" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Complaint Aging</p>
+          <h2>Cases nearing or crossing SLA.</h2>
+        </div>
+        <div id="complaintAgingBoard" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Officer Performance</p>
+          <h2>Field ownership and closure momentum.</h2>
+        </div>
+        <div id="officerPerformanceBoard" class="stack-list"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Daily Action Summary</p>
+          <h2>Today’s command-room movement.</h2>
+        </div>
+        <div id="dailyActionSummary" class="stack-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/admin-dashboard.js"></script>
+</body>
+</html>

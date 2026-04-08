@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Judge Mode</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="judge-mode">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-three"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell">
+    <section class="page-head">
+      <div>
+        <p class="eyebrow">Judge Presentation Mode</p>
+        <h1>One controlled walkthrough for the full Nav Dristi story.</h1>
+        <p class="hero-text">Use this page to demo portal services, women safety, guided complaint intake, official documents, officer-led resolution, admin command flow, and district intelligence in a clean order.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-primary" href="./auth.html">Portal Entry</a>
+        <a class="button button-secondary" href="./services.html">Open Services</a>
+      </div>
+    </section>
+
+    <section class="stat-grid" id="judgeModeStats"></section>
+
+    <section class="dashboard-grid">
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Judge Autopilot</p>
+          <h2>Run the best demo route automatically</h2>
+        </div>
+        <div class="hero-actions">
+          <button class="button button-primary" type="button" id="judgeAutoplayStart">Start Autopilot</button>
+          <button class="button button-secondary" type="button" id="judgeAutoplayNext">Next Step</button>
+          <button class="button button-ghost" type="button" id="judgeAutoplayStop">Stop</button>
+        </div>
+        <div class="glass-subcard">
+          <strong id="judgeAutoplayLabel">Preview ready</strong>
+          <p id="judgeAutoplaySummary">Autopilot will preview services, women safety, complaint intake, documents, resolution center, admin workflow, and map intelligence.</p>
+        </div>
+        <iframe id="judgeAutoplayFrame" class="district-map-frame judge-preview-frame" title="Judge autopilot preview"></iframe>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Demo Flow</p>
+          <h2>Recommended sequence for tomorrow's presentation.</h2>
+        </div>
+        <div class="judge-route-grid" id="judgeRouteGrid"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">What Is Different</p>
+          <h2>Why Nav Dristi stands out.</h2>
+        </div>
+        <div class="stack-list" id="judgeDifferenceList"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Live Demo Cases</p>
+          <h2>Use these seeded cases to show safety, emergency, and closure credibility.</h2>
+        </div>
+        <div class="service-directory-grid" id="judgeCaseGrid"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Document Pack</p>
+          <h2>Official outputs you can print live.</h2>
+        </div>
+        <div class="stack-list" id="judgeDocumentList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/judge-mode.js"></script>
+</body>
+</html>

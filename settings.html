@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="settings">
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell">
+    <section class="page-head">
+      <div>
+        <p class="eyebrow">Settings</p>
+        <h1>Connect real AI replies and voice.</h1>
+        <p class="hero-text">Add your API settings to let Nav Dristi answer through a real model and speak replies aloud. Settings are stored locally in this browser for the demo.</p>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">AI Setup</p>
+          <h2>API and model settings</h2>
+        </div>
+        <form class="stack-form" id="settingsForm">
+          <div class="form-group">
+            <label for="apiProvider">Provider</label>
+            <select id="apiProvider" name="provider">
+              <option value="openai">OpenAI</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="apiKey">API key</label>
+            <input id="apiKey" name="apiKey" type="password" placeholder="sk-..." autocomplete="off">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="responseModel">Response model</label>
+              <input id="responseModel" name="responseModel" type="text" value="gpt-4.1-mini">
+            </div>
+            <div class="form-group">
+              <label for="voiceModel">Voice model</label>
+              <input id="voiceModel" name="voiceModel" type="text" value="gpt-4o-mini-tts">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="voiceName">Voice</label>
+              <select id="voiceName" name="voiceName">
+                <option value="alloy">alloy</option>
+                <option value="ash">ash</option>
+                <option value="ballad">ballad</option>
+                <option value="coral">coral</option>
+                <option value="sage">sage</option>
+                <option value="verse">verse</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="aiEnabled">Real AI mode</label>
+              <select id="aiEnabled" name="enabled">
+                <option value="true">Enabled</option>
+                <option value="false">Disabled</option>
+              </select>
+            </div>
+          </div>
+          <button class="button button-primary wide-button" type="submit">Save Settings</button>
+        </form>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Role And Safety</p>
+          <h2>Demo notes</h2>
+        </div>
+        <div class="glass-subcard">
+          <strong>Role-based access</strong>
+          <p>Users cannot use admin controls. Admins manage escalations, assignments, and operational actions.</p>
+        </div>
+        <div class="glass-subcard">
+          <strong>Security note</strong>
+          <p>For this hackathon demo, the API key is stored in local browser storage. For production, move AI calls to a secure backend.</p>
+        </div>
+        <div class="glass-subcard" id="settingsSummaryCard">
+          <strong>Current AI status</strong>
+          <p>Loading current settings...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/ai-api.js"></script>
+  <script src="./public/js/settings.js"></script>
+</body>
+</html>

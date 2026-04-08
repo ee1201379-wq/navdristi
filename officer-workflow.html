@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Officer Workflow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="officer-workflow">
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell">
+    <section class="page-head">
+      <div>
+        <p class="eyebrow">Officer Workflow</p>
+        <h1>Assignments, field diary, proof trail, and citizen contact in one place.</h1>
+        <p class="hero-text">This page demonstrates what an officer sees after the admin command center assigns work: deadlines, field actions, proof notes, and follow-up with citizens.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-primary" href="./admin-dashboard.html">Back To Admin</a>
+        <a class="button button-secondary" href="./complaint.html">Open Resolution Center</a>
+      </div>
+    </section>
+
+    <section class="stat-grid" id="officerWorkflowStats"></section>
+
+    <section class="dashboard-grid admin-grid">
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Officer Filter</p>
+          <h2>Focus one officer or review the full queue.</h2>
+        </div>
+        <div class="toolbar toolbar-wide">
+          <select id="officerWorkflowFilter"></select>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Deadline Board</p>
+          <h2>Who needs action next.</h2>
+        </div>
+        <div class="stack-list" id="officerDeadlineBoard"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Today's Assignments</p>
+          <h2>Operational queue for the selected officer.</h2>
+        </div>
+        <div class="stack-list" id="officerAssignmentList"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Proof Upload Notes</p>
+          <h2>Latest field proof entries.</h2>
+        </div>
+        <div class="stack-list" id="officerProofList"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Field Diary</p>
+          <h2>Visit log, geo-style notes, and completion trail.</h2>
+        </div>
+        <div class="stack-list" id="officerDiaryList"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Citizen Contact History</p>
+          <h2>Who was updated and when.</h2>
+        </div>
+        <div class="stack-list" id="officerContactHistory"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/officer-workflow.js"></script>
+</body>
+</html>

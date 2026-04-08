@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="analytics">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell">
+    <section class="page-head">
+      <div>
+        <p class="eyebrow">Analytics Layer</p>
+        <h1>See how complaint operations perform across wards, categories, and departments.</h1>
+        <p class="hero-text">These analytics are built from seeded and user-generated complaint data, AI urgency signals, and predictive operational alerts in the demo workspace.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-secondary" href="./admin-dashboard.html">Open Admin Dashboard</a>
+        <a class="button button-ghost" href="./safety-map.html">Open Safety Map</a>
+      </div>
+    </section>
+
+    <section class="stat-grid" id="analyticsStats"></section>
+
+    <section class="dashboard-grid analytics-grid">
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Status Distribution</p>
+          <h2>What stage the city is in.</h2>
+        </div>
+        <div class="donut-wrap">
+          <div class="donut-chart" id="statusDonut"></div>
+          <div class="legend-list" id="statusLegend"></div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Category Mix</p>
+          <h2>Where complaints are concentrating.</h2>
+        </div>
+        <div id="analyticsCategoryBars" class="bars-wrap"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Complaint Trend</p>
+          <h2>Daily inflow over the last seven days.</h2>
+        </div>
+        <div class="trend-chart" id="trendChart"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Live Priority Heatmap</p>
+          <h2>Which areas need more operational focus right now.</h2>
+        </div>
+        <div class="heatmap-grid" id="wardHeatmap"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Real-Time Complaint Map</p>
+          <h2>See complaint areas update across Chhattisgarh.</h2>
+        </div>
+        <div class="map-grid">
+          <div class="city-map" id="liveComplaintMap"></div>
+          <div class="stack-list" id="complaintAreaList"></div>
+        </div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Department Performance</p>
+          <h2>Backlog, resolution speed, and SLA pressure.</h2>
+        </div>
+        <div class="stack-list" id="departmentPerformance"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">AI Recommendations</p>
+          <h2>Where the team should focus next.</h2>
+        </div>
+        <div class="stack-list" id="analyticsHighlights"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Predictive Signals</p>
+          <h2>Issues likely to spike next.</h2>
+        </div>
+        <div class="stack-list" id="predictiveSignals"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/analytics.js"></script>
+</body>
+</html>

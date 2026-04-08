@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Dristi Chhattisgarh Public Services Portal | Safety Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+<body data-page="safety-map">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header data-app-header></header>
+
+  <main class="page-shell">
+    <section class="page-head">
+      <div>
+        <p class="eyebrow">Chhattisgarh Safety Map</p>
+        <h1>Track district safety levels, roads, and live complaint pressure on a real map.</h1>
+        <p class="hero-text">This page uses real Chhattisgarh district names, district headquarters, and major roads so you can show a grounded operational view in the final demo.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-primary" href="./citizen-dashboard.html">Raise Complaint</a>
+        <a class="button button-secondary" href="./analytics.html">Open Analytics</a>
+        <a class="button button-ghost" href="./judge-mode.html">Judge Mode</a>
+      </div>
+    </section>
+
+    <section class="stat-grid" id="safetyStats"></section>
+
+    <section class="dashboard-grid analytics-grid">
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">District Explorer</p>
+          <h2>Interactive Chhattisgarh map with district context.</h2>
+        </div>
+        <div class="map-grid">
+          <div class="district-map-panel">
+            <iframe id="districtMapFrame" class="district-map-frame" title="Chhattisgarh district map" loading="lazy"></iframe>
+          </div>
+          <div class="glass-subcard district-detail-card" id="selectedDistrictCard"></div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">Safety Levels</p>
+          <h2>District-wise risk board.</h2>
+        </div>
+        <div class="stack-list" id="districtSafetyList"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Road Watch</p>
+          <h2>Complaint-linked roads and streets in focus.</h2>
+        </div>
+        <div class="stack-list" id="roadWatchList"></div>
+      </div>
+
+      <div class="glass-card">
+        <div class="section-title compact">
+          <p class="eyebrow">District Risk Intelligence</p>
+          <h2>Women, elder, and repeated issue hotspots.</h2>
+        </div>
+        <div class="stack-list" id="districtRiskBoard"></div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Citizen Trust Signals</p>
+          <h2>Public transparency and district pressure signals.</h2>
+        </div>
+        <div class="service-directory-grid">
+          <div class="glass-subcard" id="publicTransparencyCard"></div>
+          <div class="glass-subcard" id="womenHotspotCard"></div>
+          <div class="glass-subcard" id="elderRiskCard"></div>
+        </div>
+      </div>
+
+      <div class="glass-card span-two">
+        <div class="section-title compact">
+          <p class="eyebrow">Emergency Intelligence</p>
+          <h2>112 access, flood watch, severity, and rapid safety action.</h2>
+        </div>
+        <div class="service-directory-grid">
+          <div class="glass-subcard" id="emergencyIntegrationCard"></div>
+          <div class="glass-subcard" id="floodAlertCard"></div>
+          <div class="glass-subcard" id="districtSeverityCard"></div>
+          <div class="glass-subcard" id="womenRapidActionCard"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./public/js/chhattisgarh-data.js"></script>
+  <script src="./public/js/app.js"></script>
+  <script src="./public/js/ui.js"></script>
+  <script src="./public/js/safety-map.js"></script>
+</body>
+</html>
